@@ -9,6 +9,9 @@ echo "done installing cli tools, moving to installing homebrew."
 echo "installing homebrew x3"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew analytics off
+echo '# Set PATH, MANPATH, etc., for Homebrew.' >> /Users/incirlik/.zprofile
+echo 'eval "$/opt/homebrew/bin/brew shellenv)"' >> /Users/incirlik/.zprofile
+eval "$/opt/homebrew/bin/brew shellenv"
 echo "done installing homebrew, moving to taps."
 
 # brew taps
