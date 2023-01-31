@@ -1,28 +1,14 @@
 #!/bin/zsh
 
-# installing xcode cli tools
-echo "installing cli tools :3"
-xcode-select --install
-echo "done installing cli tools, moving to installing homebrew."
-
-# homebrew 
-echo "installing homebrew x3"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew analytics off
-echo '# Set PATH, MANPATH, etc., for Homebrew.' >> /Users/incirlik/.zprofile
-echo 'eval "$/opt/homebrew/bin/brew shellenv)"' >> /Users/incirlik/.zprofile
-eval "$/opt/homebrew/bin/brew shellenv"
-echo "done installing homebrew, moving to taps."
-
 # brew taps
-echo "installing homebrew taps >_<"
+echo "----> installing homebrew taps >_<"
 brew tap homebrew/cask-fonts
 brew tap FelixKratz/formulae
 brew tap koekeishiya/formulae
-echo "done installing taps, moving to installing needed software."
+echo "----> done installing taps, moving to installing needed software."
 
 # install shit
-echo "installing the shit you need :3"
+echo "---->installing the shit you need :3"
 brew install powerlevel9k
 brew install node
 brew install zsh-syntax-highlighting
@@ -42,22 +28,22 @@ brew install coreutils
 brew install jq
 brew install gh
 brew install wget
-echo "done installing shit, moving to casks."
+echo "----> done installing shit, moving to casks."
 # ^^ more to come
 
 # installing casks
-echo "installing casks UwU"
+echo "----> installing casks UwU"
 brew install --cask alacritty
 brew install --cask spotify
 brew install --cask font-hack-nerd-font
 brew install --cask font-space-mono-nerd-font
 brew install --cask iina
-echo "done installing brew casks, moving to changing default settings."
+echo "----> done installing brew casks, moving to changing default settings."
 
 # ^^ more to come
 
 # changing mac settings
-echo "changing macos defaults"
+echo "----> changing macos defaults"
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.spaces spans-displays -bool false
@@ -90,26 +76,26 @@ defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool 
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
-echo "done changing default macos settings, moving to copying config files."
+echo "----> done changing default macos settings, moving to copying config files."
 
 # copying config
-echo "copying configsssss :3"
+echo "---->copying configsssss :3"
 git clone https://github.com/January180/macosdotfiles.git
 cp -r macosdotfiles/.zshrc ~/
 cp -r macosdotfiles/.yabairc ~/ 
 cp -r macosdotfiles/.hushlogin ~/
 cp -r macosdotfiles/.config ~/
-echo "cleaning up. . ."
+echo "----> cleaning up. . ."
 rm -r macosdotfiles
-echo "done cleaning up, moving to starting processes."
+echo "----> done cleaning up, moving to starting processes."
 # starting proccesses
-echo "starting proccesses"
+echo "---->starting proccesses"
 
 brew services start skhd
 brew services start yabai
 brew services start sketchybar
-echo "done starting procceses."
+echo "----> done starting procceses."
 
 #warning 
-echo "installation is done, run nvim to install your config and restart you silly goose!"
+echo "---->>>>>>>installation is done, run nvim to install your config and restart you silly goose! <<<<<<<----"
 
